@@ -4,7 +4,7 @@ using UnityEngine;
 using System;
 using UniRx;
 
-public class MessageSample : MonoBehaviour
+public class Test_ObservableFectory_Timer : MonoBehaviour
 {
     [SerializeField] 
     float countTimeSeconds = 5f;

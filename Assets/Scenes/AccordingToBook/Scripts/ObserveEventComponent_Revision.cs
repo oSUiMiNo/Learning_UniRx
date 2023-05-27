@@ -16,6 +16,7 @@ public class ObserveEventComponent_Revision : MonoBehaviour
     {
         countDownEventProvider = GetComponent<CountDownEventProvider>();
 
+        //PrintLogObserver ‚Ì’†g‚Æ“¯“™‚Ìˆ—‚ð‚±‚Ìê‚ÅŽÀ‘•‚µ‚Ä‚¢‚é‚Ì‚Å PrintLogObserver ‚Í•K—v‚È‚¢
         disposable = countDownEventProvider.CountDownSubject.Subscribe(
                 x => Debug.Log(x), //OnNext
                 ex => Debug.Log(ex), //OnError
@@ -26,7 +27,7 @@ public class ObserveEventComponent_Revision : MonoBehaviour
         countDownEventProvider.Count();
 
         var subject = new  Subject<string>();
-        var A = subject.Scan((a, b) => a + " " + b).Last();
+        var A = subject.Scan((a, b) => a + " " + b).Last(); //‚È‚ñ‚¾‚±‚ê
         A.Subscribe(x => Debug.Log(x));
     }
 

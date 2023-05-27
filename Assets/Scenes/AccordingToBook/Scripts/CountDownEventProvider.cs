@@ -7,7 +7,7 @@ using UniRx;
 public class CountDownEventProvider : MonoBehaviour
 {
     [SerializeField] 
-    private int countSeconds = 10; //カウント用
+    private int countSeconds = 3; //カウント用
 
     private MySubject<int> subject = new MySubject<int>();
 
