@@ -12,6 +12,7 @@ public class ObserveEventComponent_Revision : MonoBehaviour
     private CountDownEventProvider countDownEventProvider;
     private IDisposable disposable;
 
+
     private void Start()
     {
         countDownEventProvider = GetComponent<CountDownEventProvider>();
@@ -26,9 +27,9 @@ public class ObserveEventComponent_Revision : MonoBehaviour
 
         countDownEventProvider.Count();
 
-        var subject = new  Subject<string>();
-        var A = subject.Scan((a, b) => a + " " + b).Last(); //‚È‚ñ‚¾‚±‚ê
-        A.Subscribe(x => Debug.Log(x));
+        //var subject = new Subject<string>();
+        //var A = subject.Scan((a, b) => a + " " + b).Last(); //‚È‚ñ‚¾‚±‚ê
+        //A.Subscribe(x => Debug.Log(x));
     }
 
     private void OnDestroy() { disposable?.Dispose(); }

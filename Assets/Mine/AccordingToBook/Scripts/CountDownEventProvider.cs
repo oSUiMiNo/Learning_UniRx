@@ -12,7 +12,7 @@ public class CountDownEventProvider : MonoBehaviour
     private MySubject<int> subject = new MySubject<int>();
 
     /// <summary>
-    /// Subject<T> ( 今回は MySubject<T> で代用 ) が継承している ISubject<T> は、 IObserver<T>, IObservable<T> などを継承しているが、
+    /// 上記 Subject<T> ( 今回は MySubject<T> で代用 ) が継承している ISubject<T> は、 IObserver<T>, IObservable<T> などを継承しているが、
     /// そのうち IObservableインターフェイス の部分のみ公開。
     /// IObservable が唯一持っているのは、登録した Observer を購読するための Subscrive() である。
     /// つまり、他のクラスから subject の Subscrive() だけを呼べるようになる。

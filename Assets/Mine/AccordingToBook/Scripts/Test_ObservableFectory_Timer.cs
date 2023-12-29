@@ -8,11 +8,12 @@ public class Test_ObservableFectory_Timer : MonoBehaviour
 {
     [SerializeField] 
     float countTimeSeconds = 5f;
-    public IObservable<Unit> OnTimeUpAsyncSubject => onTimeUpAsyncSubject;
 
     readonly AsyncSubject<Unit> onTimeUpAsyncSubject = new AsyncSubject<Unit> ();
+    public IObservable<Unit> OnTimeUpAsyncSubject => onTimeUpAsyncSubject;
 
     IDisposable disposable;
+
 
     void Start()
     {
@@ -26,6 +27,7 @@ public class Test_ObservableFectory_Timer : MonoBehaviour
                 onTimeUpAsyncSubject.OnCompleted();
             });
     }
+
 
     void OnDestroy()
     {
