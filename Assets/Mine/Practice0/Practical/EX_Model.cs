@@ -1,24 +1,23 @@
-
 using UnityEngine;
+// Model は View も Presenter も知らない
 
-namespace Ono.MVP.Model
+
+namespace MakuExample.MVP_Practical.Model
 {
     /// <summary>
-    /// ビジネスロジックを持つモデルクラス
-    /// キューブを回転させる
-    /// キューブにアタッチ
+    /// キューブにアタッチする。
+    /// データ外部から渡されるデータによってキューブを回転させるロジックを持つモデルクラス。
+    /// キューブが View のように見えるが、View は UIの見た目であるスライダー。
+    /// Modelのデータが更新されているのが分かりやすいようにキューブでビジュアライズしているだけで、
+    /// 重要なのは当Modelクラスの数値（データ）なのだが、データを保存する変数が無いので更に分かりにくい
+    /// データはキューブ Transform のプロパティに格納される形になっているから。
+    /// なので厳密には今回は Transform が Model と言っていい。
     /// </summary>
-    public class CubeRotationModel : MonoBehaviour
+    public class EX_Model : MonoBehaviour
     {
-        /// <summary>
-        /// インスタンス
-        /// </summary>
-        public static CubeRotationModel Instance;
+        public static EX_Model Ins;
+        void Awake() { Ins = this; }
 
-        private void Awake()
-        {
-            Instance = this;
-        }
 
         /// <summary>
         /// 与えられたパラメータに応じてX軸方向にキューブを回転
